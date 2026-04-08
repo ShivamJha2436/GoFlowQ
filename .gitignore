@@ -1,0 +1,8 @@
+## env files
+.env
+.env.example
+
+## frontend build files
+
+internal/httpapi/dashboardapp/node_modules
+internal/httpapi/dashboardapp/.next

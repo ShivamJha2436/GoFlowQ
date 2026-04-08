@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(224, 122, 47, 0.14), transparent 24%),
+    radial-gradient(circle at 82% 8%, rgba(30, 92, 86, 0.16), transparent 18%),
+    linear-gradient(180deg, #f7f2ea 0%, #eee3d2 100%);
+  color: #0f1720;
+  font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 32, 0.04) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 80%);
+}
+
+::selection {
+  background: rgba(224, 122, 47, 0.2);
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-[28px] border border-white/60 bg-white/75 shadow-panel backdrop-blur-xl;
+  }
+
+  .metric-card {
+    @apply glass-panel p-5 transition-transform duration-200 hover:-translate-y-0.5;
+  }
+
+  .panel-title {
+    @apply font-display text-[1.65rem] leading-none text-ink;
+  }
+
+  .subtle-label {
+    @apply text-[0.72rem] uppercase tracking-[0.22em] text-ember/80;
+  }
+
+  .data-table {
+    @apply min-w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply border-b border-slate-900/10 px-4 py-3 text-left text-[0.68rem] uppercase tracking-[0.16em] text-slate-500;
+  }
+
+  .data-table td {
+    @apply border-b border-slate-900/10 px-4 py-4 align-top text-sm text-slate-700;
+  }
+
+  .surface-input {
+    @apply w-full rounded-2xl border border-slate-900/10 bg-white/90 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-ember/50 focus:ring-2 focus:ring-ember/20;
+  }
+
+  .surface-button {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium transition;
+  }
+
+  .surface-button-primary {
+    @apply surface-button bg-slatepanel text-white shadow-lg shadow-slate-900/15 hover:bg-slate-800;
+  }
+
+  .surface-button-secondary {
+    @apply surface-button border border-slate-900/10 bg-white/85 text-slate-900 hover:bg-white;
+  }
+
+  .surface-button-danger {
+    @apply surface-button border border-rose-300/50 bg-rose-50 text-rose-700 hover:bg-rose-100;
+  }
+
+  .status-dot {
+    @apply h-2.5 w-2.5 rounded-full;
+  }
+}
