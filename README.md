@@ -158,7 +158,3 @@ Permanently removes a dead-lettered job from the DLQ.
 - Failed jobs use exponential backoff from `RETRY_BASE_DELAY`
 - Retry delays are capped at one minute
 - When a job exceeds `max_retries`, it is moved to the dead-letter queue
-
-## Configuration
-
-See [.env.example](/home/sagethefox/dev-env/projects/go/GoFlowQ/.env.example) for supported environment variables.
